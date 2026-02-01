@@ -11,111 +11,149 @@
 
 <style>
 :root {
-  --bg: #0a0a0a;
-  --card: #111;
+  --bg: #050505;
+  --card: #0f0f0f;
   --neon: #00f7ff;
+  --chaos: #ff0055;
   --text: #eaeaea;
 }
 
 * {
   box-sizing: border-box;
-  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: radial-gradient(circle at top, #111, #000);
   color: var(--text);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 /* HEADER */
 header {
-  padding: 90px 20px;
+  padding: 110px 20px;
   text-align: center;
-  background: radial-gradient(circle at top, #111, #000);
+  position: relative;
 }
 
+/* GRAFFITI LOGO */
 header h1 {
   font-family: 'Sedgwick Ave Display', cursive;
-  font-size: 3.5rem;
+  font-size: 4rem;
   color: var(--neon);
-  letter-spacing: 3px;
+  letter-spacing: 4px;
+  position: relative;
+  animation: glitch 2.5s infinite;
   text-shadow:
-    0 0 10px var(--neon),
-    0 0 30px rgba(0,247,255,0.6);
-  margin-bottom: 10px;
+    2px 0 var(--chaos),
+    -2px 0 #00ffee,
+    0 0 20px var(--neon),
+    0 0 40px rgba(0,247,255,0.8);
+}
+
+/* GLITCH EFFECT */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+/* DRIP EFFECT */
+header h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 8px;
+  height: 50px;
+  background: linear-gradient(var(--neon), transparent);
+  animation: drip 3s infinite;
+}
+
+@keyframes drip {
+  0% { height: 0; opacity: 0; }
+  40% { height: 40px; opacity: 1; }
+  100% { height: 60px; opacity: 0; }
 }
 
 header p {
-  max-width: 600px;
-  margin: auto;
+  margin-top: 20px;
   opacity: 0.85;
+  letter-spacing: 2px;
 }
 
 /* SECTIONS */
 section {
-  padding: 70px 20px;
+  padding: 80px 20px;
   max-width: 1100px;
   margin: auto;
 }
 
 .section-title {
-  font-size: 2rem;
-  margin-bottom: 30px;
+  font-size: 2.2rem;
   color: var(--neon);
+  margin-bottom: 35px;
+  text-shadow: 0 0 15px rgba(0,247,255,0.5);
 }
 
 /* CARDS */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 25px;
 }
 
 .card {
-  background: var(--card);
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid #1f1f1f;
+  background: linear-gradient(145deg, #0b0b0b, #141414);
+  padding: 30px;
+  border-radius: 14px;
+  border: 1px solid #222;
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(0,247,255,0.25);
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 0 30px rgba(255,0,85,0.4);
 }
 
 /* GALLERY */
 .gallery img {
   width: 100%;
-  border-radius: 10px;
-  filter: grayscale(30%);
-  transition: 0.3s;
+  border-radius: 12px;
+  filter: contrast(120%) grayscale(40%);
+  transition: 0.4s;
 }
 
 .gallery img:hover {
-  filter: grayscale(0);
-  box-shadow: 0 0 20px rgba(0,247,255,0.4);
+  filter: grayscale(0) contrast(140%);
+  transform: scale(1.08);
+  box-shadow: 0 0 35px rgba(0,247,255,0.5);
 }
 
 /* CONTACT */
 .contact a {
   display: inline-block;
-  margin-top: 15px;
-  padding: 12px 30px;
+  margin-top: 25px;
+  padding: 14px 40px;
   color: #000;
-  background: var(--neon);
+  background: linear-gradient(90deg, var(--neon), var(--chaos));
   text-decoration: none;
-  border-radius: 30px;
+  border-radius: 40px;
   font-weight: bold;
+  letter-spacing: 2px;
+  box-shadow: 0 0 20px rgba(255,0,85,0.6);
 }
 
 /* FOOTER */
 footer {
-  padding: 30px;
+  padding: 40px;
   text-align: center;
   background: #000;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 </style>
 </head>
@@ -138,7 +176,7 @@ footer {
 </section>
 
 <section>
-  <div class="section-title">Gallery</div>
+  <div class="section-title">Build Gallery</div>
   <div class="grid gallery">
     <img src="https://via.placeholder.com/600x400">
     <img src="https://via.placeholder.com/600x400">
@@ -148,7 +186,7 @@ footer {
 
 <section class="contact">
   <div class="section-title">Contact T80 Powersports</div>
-  <p>Ready to build something nasty?</p>
+  <p>Ready to build something savage?</p>
   <a href="mailto:youremail@email.com">Contact T80 Powersports</a>
 </section>
 
