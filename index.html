@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>T80 Powersports</title>
 
+<!-- Section font (industrial / aggressive, not cheesy) -->
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
@@ -30,7 +31,7 @@ body {
   overflow-x: hidden;
 }
 
-/* subtle grit */
+/* subtle grit so it still feels street */
 body::before {
   content: "";
   position: fixed;
@@ -54,14 +55,25 @@ body::before {
   border-bottom: 3px solid #111;
 }
 
-.hero img {
+.hero-logo {
   max-width: 420px;
   width: 85%;
   height: auto;
 }
 
-.hero p {
+/* Brand name under logo */
+.brand-name {
   margin-top: 30px;
+  font-size: 2.4rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #eaeaea;
+}
+
+/* Tagline */
+.tagline {
+  margin-top: 18px;
   letter-spacing: 3px;
   color: var(--accent);
   font-weight: bold;
@@ -109,70 +121,4 @@ section {
   width: 100%;
   border-radius: 14px;
   filter: grayscale(50%) contrast(120%);
-  transition: 0.4s;
-}
-
-.gallery img:hover {
-  filter: grayscale(0) contrast(150%);
-  transform: scale(1.06);
-  box-shadow: 0 0 30px rgba(0,247,255,0.7);
-}
-
-/* SHOP BUTTON */
-.buy-btn {
-  margin-top: 18px;
-  padding: 14px 32px;
-  background: linear-gradient(90deg, var(--neon), var(--chaos));
-  border: none;
-  border-radius: 40px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  cursor: pointer;
-  box-shadow: 0 0 22px rgba(255,0,85,0.7);
-}
-
-.buy-btn:hover {
-  transform: scale(1.05);
-}
-
-/* CONTACT */
-.contact a {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 18px 45px;
-  background: linear-gradient(90deg, var(--chaos), var(--neon));
-  color: #000;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-/* FOOTER */
-footer {
-  padding: 40px;
-  text-align: center;
-  background: #000;
-  color: var(--accent);
-  letter-spacing: 1px;
-}
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<div class="hero">
-  <img src="t80skull.png" alt="T80 Powersports Logo">
-  <p>Performance • Custom Builds • Power Sports</p>
-</div>
-
-<section>
-  <div class="section-title">What We Do</div>
-  <div class="grid">
-    <div class="card">Performance Upgrades</div>
-    <div class="card">Tuning / Flashing</div>
-    <div class="card">Fabrication</div>
-  </div>
-</sect
-
+  transit
