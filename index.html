@@ -5,15 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>T80 Powersports</title>
 
-<!-- Graffiti / aggressive font -->
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
 :root {
   --neon: #00f7ff;
   --chaos: #ff0055;
-  --text: #eaeaea;
   --accent: #ffcc00;
+  --text: #eaeaea;
+  --dark: #050505;
+  --panel: #0c0c0c;
 }
 
 * {
@@ -25,91 +26,113 @@
 body {
   font-family: Arial, sans-serif;
   color: var(--text);
-  background: url('t80skull.png') no-repeat center center fixed;
-  background-size: cover;
+  background: radial-gradient(circle at top, #111 0%, #000 70%);
   overflow-x: hidden;
 }
 
-/* dark overlay so text hits harder */
+/* subtle grit */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.65);
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.02) 0,
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  pointer-events: none;
   z-index: -1;
 }
 
-/* HEADER */
-header {
-  padding: 140px 20px 80px;
+/* HERO */
+.hero {
+  background: linear-gradient(180deg, #000, #0b0b0b);
+  padding: 160px 20px 120px;
   text-align: center;
+  border-bottom: 3px solid #111;
 }
 
-header img {
-  max-width: 600px;
-  width: 90%;
+.hero img {
+  max-width: 420px;
+  width: 85%;
   height: auto;
 }
 
-/* tagline */
-header p {
-  margin-top: 25px;
-  letter-spacing: 2px;
+.hero p {
+  margin-top: 30px;
+  letter-spacing: 3px;
   color: var(--accent);
-  text-shadow: 0 0 12px var(--chaos);
   font-weight: bold;
 }
 
 /* SECTIONS */
 section {
-  padding: 80px 20px;
+  padding: 90px 20px;
   max-width: 1100px;
   margin: auto;
 }
 
-/* TITLES */
 .section-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: var(--neon);
-  margin-bottom: 35px;
-  text-shadow: 0 0 18px var(--neon);
+  margin-bottom: 40px;
+  text-shadow: 0 0 14px var(--neon);
 }
 
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
 }
 
 .card {
-  background: rgba(10,10,10,0.85);
+  background: var(--panel);
   padding: 35px;
-  border-radius: 14px;
-  border: 2px solid #222;
+  border-radius: 16px;
+  border: 2px solid #1a1a1a;
   text-align: center;
   font-weight: bold;
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: scale(1.05) rotate(-2deg);
-  box-shadow: 0 0 40px rgba(255,0,85,0.6);
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: 0 0 35px rgba(255,0,85,0.55);
 }
 
 /* GALLERY */
 .gallery img {
   width: 100%;
-  border-radius: 12px;
-  filter: grayscale(40%) contrast(120%);
+  border-radius: 14px;
+  filter: grayscale(50%) contrast(120%);
   transition: 0.4s;
 }
 
 .gallery img:hover {
   filter: grayscale(0) contrast(150%);
-  transform: scale(1.08) rotate(-1deg);
-  box-shadow: 0 0 35px rgba(0,247,255,0.7);
+  transform: scale(1.06);
+  box-shadow: 0 0 30px rgba(0,247,255,0.7);
+}
+
+/* SHOP BUTTON */
+.buy-btn {
+  margin-top: 18px;
+  padding: 14px 32px;
+  background: linear-gradient(90deg, var(--neon), var(--chaos));
+  border: none;
+  border-radius: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 0 0 22px rgba(255,0,85,0.7);
+}
+
+.buy-btn:hover {
+  transform: scale(1.05);
 }
 
 /* CONTACT */
@@ -117,26 +140,19 @@ section {
   display: inline-block;
   margin-top: 30px;
   padding: 18px 45px;
-  background: linear-gradient(90deg, var(--neon), var(--chaos));
+  background: linear-gradient(90deg, var(--chaos), var(--neon));
   color: #000;
   text-decoration: none;
   border-radius: 50px;
   font-weight: bold;
   letter-spacing: 2px;
-  box-shadow: 0 0 30px rgba(255,0,85,0.8);
-  transition: 0.3s;
-}
-
-.contact a:hover {
-  transform: scale(1.06);
-  box-shadow: 0 0 45px rgba(0,247,255,0.9);
 }
 
 /* FOOTER */
 footer {
   padding: 40px;
   text-align: center;
-  background: rgba(0,0,0,0.7);
+  background: #000;
   color: var(--accent);
   letter-spacing: 1px;
 }
@@ -145,38 +161,18 @@ footer {
 
 <body>
 
-<header>
+<!-- HERO -->
+<div class="hero">
   <img src="t80skull.png" alt="T80 Powersports Logo">
-  <p>Performance • Custom Builds • Power Sports Solutions</p>
-</header>
+  <p>Performance • Custom Builds • Power Sports</p>
+</div>
 
 <section>
-  <div class="section-title">Go Ahead — She Said Yes</div>
+  <div class="section-title">What We Do</div>
   <div class="grid">
     <div class="card">Performance Upgrades</div>
     <div class="card">Tuning / Flashing</div>
     <div class="card">Fabrication</div>
   </div>
-</section>
+</sect
 
-<section>
-  <div class="section-title">Build Gallery</div>
-  <div class="grid gallery">
-    <img src="https://via.placeholder.com/600x400">
-    <img src="https://via.placeholder.com/600x400">
-    <img src="https://via.placeholder.com/600x400">
-  </div>
-</section>
-
-<section class="contact">
-  <div class="section-title">Contact T80 Powersports</div>
-  <p>Build something savage?</p>
-  <a href="mailto:youremail@email.com">Contact T80 Powersports</a>
-</section>
-
-<footer>
-  © 2026 T80 Powersports
-</footer>
-
-</body>
-</html>
