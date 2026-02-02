@@ -5,57 +5,58 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>T80 Powersports</title>
 
-<!-- Graffiti Font for sections -->
+<!-- Graffiti / aggressive font -->
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #050505;
-  --card: #0f0f0f;
   --neon: #00f7ff;
   --chaos: #ff0055;
   --text: #eaeaea;
   --accent: #ffcc00;
 }
 
-* { box-sizing: border-box; margin:0; padding:0; }
-
-body {
-  body {
-  background: radial-gradient(circle at top, #111 0%, #000 100%);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background: url('t80skull.png') no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;
+}
 
-/* Background particles / dirt effect */
+/* dark overlay so text hits harder */
 body::before {
   content: "";
   position: fixed;
-  width: 100%; height: 100%;
-  background: url('https://i.ibb.co/9wTDSzD/dust-particles.png') repeat;
-  opacity: 0.05;
-  pointer-events: none;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: -1;
 }
 
 /* HEADER */
 header {
-  padding: 120px 20px 60px 20px;
+  padding: 140px 20px 80px;
   text-align: center;
-  position: relative;
 }
 
- <header>
-  <img src="t80skull.png" alt="T80 Powersports Logo" style="max-width: 100%; height: auto;">
-  <p>Performance • Custom Builds • Power Sports Solutions</p>
-</header>
-
+header img {
+  max-width: 600px;
+  width: 90%;
+  height: auto;
 }
 
-/* HEADER TEXT UNDER LOGO */
+/* tagline */
 header p {
-  margin-top: 20px;
+  margin-top: 25px;
   letter-spacing: 2px;
   color: var(--accent);
-  text-shadow: 0 0 15px var(--chaos);
+  text-shadow: 0 0 12px var(--chaos);
   font-weight: bold;
 }
 
@@ -66,17 +67,16 @@ section {
   margin: auto;
 }
 
-/* Section titles */
+/* TITLES */
 .section-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--neon);
   margin-bottom: 35px;
-  text-shadow: 0 0 15px var(--neon);
-  letter-spacing: 1px;
+  text-shadow: 0 0 18px var(--neon);
 }
 
-/* GRID CARDS */
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -84,18 +84,18 @@ section {
 }
 
 .card {
-  background: linear-gradient(145deg, #0b0b0b, #141414);
-  padding: 30px;
+  background: rgba(10,10,10,0.85);
+  padding: 35px;
   border-radius: 14px;
   border: 2px solid #222;
-  transition: 0.3s;
   text-align: center;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 .card:hover {
   transform: scale(1.05) rotate(-2deg);
-  box-shadow: 0 0 40px rgba(255,0,85,0.5);
+  box-shadow: 0 0 40px rgba(255,0,85,0.6);
 }
 
 /* GALLERY */
@@ -107,39 +107,38 @@ section {
 }
 
 .gallery img:hover {
-  filter: grayscale(0) contrast(140%);
+  filter: grayscale(0) contrast(150%);
   transform: scale(1.08) rotate(-1deg);
-  box-shadow: 0 0 35px rgba(0,247,255,0.6);
+  box-shadow: 0 0 35px rgba(0,247,255,0.7);
 }
 
 /* CONTACT */
 .contact a {
   display: inline-block;
-  margin-top: 25px;
-  padding: 16px 40px;
-  color: #000;
+  margin-top: 30px;
+  padding: 18px 45px;
   background: linear-gradient(90deg, var(--neon), var(--chaos));
+  color: #000;
   text-decoration: none;
-  border-radius: 40px;
+  border-radius: 50px;
   font-weight: bold;
   letter-spacing: 2px;
-  box-shadow: 0 0 25px rgba(255,0,85,0.7);
+  box-shadow: 0 0 30px rgba(255,0,85,0.8);
   transition: 0.3s;
 }
 
 .contact a:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(0,247,255,0.8);
+  transform: scale(1.06);
+  box-shadow: 0 0 45px rgba(0,247,255,0.9);
 }
 
 /* FOOTER */
 footer {
   padding: 40px;
   text-align: center;
-  background: #000;
-  opacity: 0.7;
-  letter-spacing: 1px;
+  background: rgba(0,0,0,0.7);
   color: var(--accent);
+  letter-spacing: 1px;
 }
 </style>
 </head>
@@ -147,16 +146,16 @@ footer {
 <body>
 
 <header>
-  <img src="https://via.placeholder.com/600x150?text=T80+Powersports+Logo" alt="T80 Powersports Logo">
+  <img src="t80skull.png" alt="T80 Powersports Logo">
   <p>Performance • Custom Builds • Power Sports Solutions</p>
 </header>
 
 <section>
-  <div class="section-title">Go ahead she said Yes!</div>
+  <div class="section-title">Go Ahead — She Said Yes</div>
   <div class="grid">
     <div class="card">Performance Upgrades</div>
-    <div class="card">Tuning/Flashing</div>
-    <div class="card">Fab</div>
+    <div class="card">Tuning / Flashing</div>
+    <div class="card">Fabrication</div>
   </div>
 </section>
 
@@ -171,7 +170,7 @@ footer {
 
 <section class="contact">
   <div class="section-title">Contact T80 Powersports</div>
-  <p>Build something Savage?</p>
+  <p>Build something savage?</p>
   <a href="mailto:youremail@email.com">Contact T80 Powersports</a>
 </section>
 
