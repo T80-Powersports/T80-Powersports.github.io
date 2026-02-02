@@ -1,7 +1,3 @@
-<header>
-  <img src="T80-Powersports-graffiti.png" alt="T80 Powersports" style="max-width: 100%; height: auto;">
-  <p>Performance • Custom Builds • Power Sports Solutions</p>
-</header>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>T80 Powersports</title>
-
-<!-- Graffiti Font -->
-<link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -36,54 +29,17 @@ body {
 
 /* HEADER */
 header {
-  padding: 110px 20px;
+  padding: 100px 20px 60px 20px;
   text-align: center;
   position: relative;
 }
 
-/* GRAFFITI LOGO */
-header h1 {
-  font-family: 'Sedgwick Ave Display', cursive;
-  font-size: 4rem;
-  color: var(--neon);
-  letter-spacing: 4px;
-  position: relative;
-  animation: glitch 2.5s infinite;
-  text-shadow:
-    2px 0 var(--chaos),
-    -2px 0 #00ffee,
-    0 0 20px var(--neon),
-    0 0 40px rgba(0,247,255,0.8);
+header img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* GLITCH EFFECT */
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(2px, -2px); }
-  60% { transform: translate(-1px, 1px); }
-  80% { transform: translate(1px, -1px); }
-  100% { transform: translate(0); }
-}
-
-/* DRIP EFFECT */
-header h1::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 100%;
-  width: 8px;
-  height: 50px;
-  background: linear-gradient(var(--neon), transparent);
-  animation: drip 3s infinite;
-}
-
-@keyframes drip {
-  0% { height: 0; opacity: 0; }
-  40% { height: 40px; opacity: 1; }
-  100% { height: 60px; opacity: 0; }
-}
-
+/* Remove animation/glow, keep clean */
 header p {
   margin-top: 20px;
   opacity: 0.85;
@@ -134,69 +90,4 @@ section {
 
 .gallery img:hover {
   filter: grayscale(0) contrast(140%);
-  transform: scale(1.08);
-  box-shadow: 0 0 35px rgba(0,247,255,0.5);
-}
-
-/* CONTACT */
-.contact a {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 14px 40px;
-  color: #000;
-  background: linear-gradient(90deg, var(--neon), var(--chaos));
-  text-decoration: none;
-  border-radius: 40px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  box-shadow: 0 0 20px rgba(255,0,85,0.6);
-}
-
-/* FOOTER */
-footer {
-  padding: 40px;
-  text-align: center;
-  background: #000;
-  opacity: 0.6;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-   <img src="T80-Powersports-graffiti.png" alt="T80 Powersports" style="max-width: 100%; height: auto;">
-  <p>Custom • Tunes • No Money Fab</p>
-</header>
-
-<section>
-  <div class="section-title">What We Do</div>
-  <div class="grid">
-    <div class="card">ATV & UTV Builds</div>
-    <div class="card">Performance Upgrades</div>
-    <div class="card">Diagnostics & Tuning</div>
-    <div class="card">Custom Fabrication</div>
-  </div>
-</section>
-
-<section>
-  <div class="section-title">Build Gallery</div>
-  <div class="grid gallery">
-    <img src="https://via.placeholder.com/600x400">
-    <img src="https://via.placeholder.com/600x400">
-    <img src="https://via.placeholder.com/600x400">
-  </div>
-</section>
-
-<section class="contact">
-  <div class="section-title">Contact T80 Powersports</div>
-  <p>Ready to build something savage?</p>
-  <a href="mailto:youremail@email.com">Contact T80 Powersports</a>
-</section>
-
-<footer>
-  © 2026 T80 Powersports
-</footer>
-
-</body>
-</html>
+  transform:
